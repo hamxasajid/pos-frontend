@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+
+    /* Custom Scrollbar for Webkit browsers (Chrome, Safari) */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: theme('colors.gray.300');
+        border-radius: 9999px;
+        transition: background-color 0.2s;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+        background-color: theme('colors.gray.700');
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: theme('colors.gray.400');
+    }
+
+    .dark ::-webkit-scrollbar-thumb:hover {
+        background-color: theme('colors.gray.600');
+    }
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
