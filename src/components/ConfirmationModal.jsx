@@ -16,7 +16,7 @@ const ConfirmationModal = ({
     return (
         <Modal isOpen={isOpen} onClose={onClose} title="">
             <div className="flex flex-col items-center text-center space-y-4 pt-2">
-                <div className={`p-3 rounded-full ${variant === 'danger' ? 'bg-red-100 text-red-600 dark:bg-red-900/20 dark:text-red-400' : 'bg-blue-100 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400'}`}>
+                <div className={`p-3 rounded-full ${variant === 'danger' ? 'bg-red-100 text-red-600 dark:bg-red-900/20 dark:text-red-400' : 'bg-primary-100 text-primary-600 dark:bg-primary-900/20 dark:text-primary-400'}`}>
                     <AlertTriangle size={32} />
                 </div>
 

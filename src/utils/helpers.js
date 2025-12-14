@@ -1,13 +1,14 @@
 export const formatCurrency = (amount) => {
-    return new Intl.NumberFormat('en-US', {
+    return new Intl.NumberFormat('en-PK', {
         style: 'currency',
-        currency: 'USD',
-    }).format(amount);
+        currency: 'PKR',
+        minimumFractionDigits: 0
+    }).format(amount).replace('PKR', 'Rs');
 };
 
-export const calculateTotal = (cartItems, discount = 0) => {
+export const calculateTotal = (cartItems, discount = 0, includeTax = true) => {
     const subtotal = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
-    const tax = subtotal * 0.1; // 10% tax
+    const tax = includeTax ? subtotal * 0.1 : 0; // 10% tax if enabled
     const total = subtotal + tax - discount;
     return { subtotal, tax, total };
 };

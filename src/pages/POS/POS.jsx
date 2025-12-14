@@ -48,7 +48,7 @@ const POS = () => {
                             {/* Mobile Cart Toggle */}
                             <button
                                 onClick={() => setIsCartOpen(true)}
-                                className="lg:hidden p-3 bg-blue-600 text-white rounded-xl shadow-lg relative active:scale-95 transition-transform"
+                                className="lg:hidden p-3 bg-primary-600 text-white rounded-xl shadow-lg relative active:scale-95 transition-transform"
                                 aria-label="Open Cart"
                             >
                                 <ShoppingBag size={20} />
@@ -62,7 +62,7 @@ const POS = () => {
                         <div className="relative w-full sm:w-64">
                             <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
                             <input
-                                className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all shadow-sm text-gray-900 dark:text-white"
+                                className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all shadow-sm text-gray-900 dark:text-white"
                                 placeholder="Search products..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -74,7 +74,7 @@ const POS = () => {
                         <button
                             onClick={() => setActiveCategory('All')}
                             className={`px-5 py-2 rounded-xl whitespace-nowrap font-medium transition-all duration-200 border cursor-pointer ${activeCategory === 'All'
-                                ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/30'
+                                ? 'bg-primary-600 text-white border-primary-600 shadow-md shadow-primary-500/30'
                                 : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800'
                                 }`}
                         >
@@ -85,7 +85,7 @@ const POS = () => {
                                 key={category.id || category._id || category.name || category}
                                 onClick={() => setActiveCategory(category.name || category)}
                                 className={`px-5 py-2 rounded-xl whitespace-nowrap font-medium transition-all duration-200 border cursor-pointer ${activeCategory === (category.name || category)
-                                    ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/30'
+                                    ? 'bg-primary-600 text-white border-primary-600 shadow-md shadow-primary-500/30'
                                     : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800'
                                     }`}
                             >

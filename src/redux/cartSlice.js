@@ -20,6 +20,7 @@ export const createOrder = createAsyncThunk(
 const initialState = {
     cartItems: [],
     discount: 0,
+    includeTax: false,
     loading: false,
     error: null,
 };
@@ -56,10 +57,14 @@ const cartSlice = createSlice({
         setDiscount: (state, action) => {
             state.discount = action.payload;
         },
+        toggleTax: (state) => {
+            state.includeTax = !state.includeTax;
+        },
         clearCart: (state) => {
             state.cartItems = [];
             state.discount = 0;
-            state.loading = false; // Reset loading on clear
+            state.includeTax = false;
+            state.loading = false;
         },
     },
     extraReducers: (builder) => {
@@ -79,5 +84,5 @@ const cartSlice = createSlice({
     }
 });
 
-export const { addToCart, removeFromCart, incrementQuantity, decrementQuantity, setDiscount, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, incrementQuantity, decrementQuantity, setDiscount, clearCart, toggleTax } = cartSlice.actions;
 export default cartSlice.reducer;

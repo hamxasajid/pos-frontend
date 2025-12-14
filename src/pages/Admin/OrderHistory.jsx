@@ -20,7 +20,7 @@ const OrderDetailsModal = ({ order, isOpen, onClose }) => {
                         <p>Cashier: {order.cashierId?.name || 'Unknown'}</p>
                     </div>
                     <div className="text-right">
-                        <span className={`px-2 py-1 rounded text-xs font-bold uppercase ${order.paymentMethod === 'cash' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30'}`}>
+                        <span className={`px-2 py-1 rounded text-xs font-bold uppercase ${order.paymentMethod === 'cash' ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300' : 'bg-primary-100 text-primary-700 dark:bg-primary-900/30'}`}>
                             {order.paymentMethod}
                         </span>
                     </div>
@@ -53,12 +53,12 @@ const OrderDetailsModal = ({ order, isOpen, onClose }) => {
                         </div>
                     )}
                     <div className="flex justify-between">
-                        <span className="text-gray-500">Tax</span>
+                        <span className="text-gray-500">Service Charges</span>
                         <span className="font-medium text-gray-900 dark:text-white">{formatCurrency(order.tax)}</span>
                     </div>
                     <div className="flex justify-between pt-2 text-lg font-bold border-t border-dashed border-gray-200 dark:border-gray-700 mt-2">
                         <span className="text-gray-900 dark:text-white">Total</span>
-                        <span className="text-blue-600 dark:text-blue-400">{formatCurrency(order.total)}</span>
+                        <span className="text-primary-600 dark:text-primary-400">{formatCurrency(order.total)}</span>
                     </div>
                 </div>
             </div>
@@ -88,7 +88,7 @@ const OrderHistory = () => {
     if (loading) {
         return (
             <div className="flex items-center justify-center h-full min-h-[400px]">
-                <Loader2 className="animate-spin text-blue-500" size={40} />
+                <Loader2 className="animate-spin text-primary-500" size={40} />
             </div>
         );
     }
@@ -126,7 +126,7 @@ const OrderHistory = () => {
                         <TableCell>
                             <span className={`capitalize px-2 py-1 rounded-md text-xs font-bold ${order.paymentMethod === 'cash'
                                 ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300'
-                                : 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300'
+                                : 'bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300'
                                 }`}>
                                 {order.paymentMethod}
                             </span>

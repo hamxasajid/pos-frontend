@@ -5,13 +5,13 @@ import { LayoutDashboard, Package, Users, FileBarChart } from 'lucide-react';
 const Sidebar = () => {
     const getLinkClass = ({ isActive }) => {
         return `flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition-all duration-200 ${isActive
-            ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30'
-            : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
+            ? 'bg-primary-600 text-white shadow-lg shadow-primary-500/30'
+            : 'text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary-600 dark:hover:text-primary-400'
             }`;
     };
 
     return (
-        <aside className="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex-shrink-0 min-h-[calc(100vh-64px)] hidden md:block transition-colors duration-300">
+        <aside className="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 flex-shrink-0 h-full transition-colors duration-300">
             <nav className="p-4 space-y-2">
                 <NavLink to="/admin" end className={getLinkClass}>
                     <LayoutDashboard size={20} />

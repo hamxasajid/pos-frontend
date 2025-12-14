@@ -108,8 +108,8 @@ const Dashboard = () => {
             {
                 label: 'Sales ($)',
                 data: graphData,
-                borderColor: 'rgb(59, 130, 246)',
-                backgroundColor: 'rgba(59, 130, 246, 0.5)',
+                borderColor: 'rgb(249, 115, 22)', // primary-500
+                backgroundColor: 'rgba(249, 115, 22, 0.5)',
                 tension: 0.4,
             },
         ],
@@ -155,10 +155,10 @@ const Dashboard = () => {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <StatsCard title="Total Sales" value={`$${stats.totalSales?.toLocaleString() || 0}`} icon={DollarSign} color="bg-blue-500" />
+                <StatsCard title="Total Sales" value={`Rs ${stats.totalSales?.toLocaleString() || 0}`} icon={DollarSign} color="bg-primary-500" />
                 <StatsCard title="Total Orders" value={stats.totalOrders || 0} icon={ShoppingBag} color="bg-purple-500" />
                 <StatsCard title="Total Products" value={stats.totalProducts || 0} icon={Users} color="bg-orange-500" />
-                <StatsCard title="Profit (Est.)" value={`$${stats.profit?.toLocaleString() || 0}`} icon={TrendingUp} color="bg-emerald-500" />
+                <StatsCard title="Profit (Est.)" value={`Rs ${stats.profit?.toLocaleString() || 0}`} icon={TrendingUp} color="bg-emerald-500" />
             </div>
 
             {/* Charts Section */}
@@ -166,6 +166,7 @@ const Dashboard = () => {
                 <div className="lg:col-span-2 bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
                     <Line options={chartOptions} data={lineChartData} />
                 </div>
+
                 <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
                     <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Top Categories</h3>
                     <div className="h-64 flex items-center justify-center">
@@ -174,7 +175,7 @@ const Dashboard = () => {
                                 labels: stats.bestSellers && stats.bestSellers.length > 0 ? stats.bestSellers.map(i => i.name) : ['No Data'],
                                 datasets: [{
                                     data: stats.bestSellers && stats.bestSellers.length > 0 ? stats.bestSellers.map(i => i.quantitySold) : [1],
-                                    backgroundColor: ['#3b82f6', '#8b5cf6', '#f97316', '#10b981', '#ef4444'],
+                                    backgroundColor: ['#f97316', '#fb923c', '#fdba74', '#10b981', '#ef4444'],
                                     borderWidth: 0
                                 }]
                             }}
@@ -184,6 +185,33 @@ const Dashboard = () => {
                             }}
                         />
                     </div>
+                </div>
+            </div>
+
+            {/* New Bar Chart: Quantity Sold by Category */}
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+                <h3 className="text-lg font-bold mb-4 text-gray-900 dark:text-white">Revenue by Product</h3>
+                <div className="h-80 w-full">
+                    <Bar
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
+                                x: { grid: { display: false } }
+                            }
+                        }}
+                        data={{
+                            labels: stats.bestSellers && stats.bestSellers.length > 0 ? stats.bestSellers.map(i => i.name) : ['No Data'],
+                            datasets: [{
+                                label: 'Revenue',
+                                data: stats.bestSellers && stats.bestSellers.length > 0 ? stats.bestSellers.map(i => i.revenue) : [0],
+                                backgroundColor: 'rgba(99, 102, 241, 0.5)', // primary/indigo
+                                borderRadius: 4,
+                            }]
+                        }}
+                    />
                 </div>
             </div>
         </div>

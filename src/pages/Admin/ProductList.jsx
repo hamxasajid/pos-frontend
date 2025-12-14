@@ -101,7 +101,7 @@ const ProductList = () => {
                     <div className="relative flex-1 sm:w-64">
                         <Search className="absolute left-3 top-2.5 text-gray-400" size={20} />
                         <input
-                            className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none"
+                            className="w-full pl-10 pr-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 outline-none"
                             placeholder="Search..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
@@ -135,7 +135,7 @@ const ProductList = () => {
                         </TableCell>
                         <TableCell>
                             <div className="flex gap-2">
-                                <Button variant="ghost" className="!p-2 text-blue-500 hover:bg-blue-50" onClick={() => handleOpenModal(item)}>
+                                <Button variant="ghost" className="!p-2 text-primary-500 hover:bg-primary-50" onClick={() => handleOpenModal(item)}>
                                     <Edit2 size={16} />
                                 </Button>
                                 <Button variant="ghost" className="!p-2 text-red-500 hover:bg-red-50" onClick={() => setDeleteId(item.id)}>
@@ -154,7 +154,7 @@ const ProductList = () => {
                         <div className="space-y-1">
                             <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
                             <select
-                                className="w-full px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                                className="w-full px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 outline-none transition-all"
                                 value={formData.category}
                                 onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                                 required
@@ -177,7 +177,7 @@ const ProductList = () => {
                         <div className="flex flex-col gap-1">
                             <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Discount Type</label>
                             <select
-                                className="w-full px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                                className="w-full px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 outline-none transition-all"
                                 value={formData.discountType}
                                 onChange={(e) => setFormData({ ...formData, discountType: e.target.value })}
                             >
@@ -197,7 +197,7 @@ const ProductList = () => {
                                     type="checkbox"
                                     checked={formData.isActive}
                                     onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
-                                    className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+                                    className="w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
                                 />
                                 <span className="text-gray-700 dark:text-gray-300 font-medium">Active Product</span>
                             </label>
@@ -207,7 +207,7 @@ const ProductList = () => {
                     <div className="flex flex-col gap-1">
                         <label className="text-sm font-medium text-gray-700 dark:text-gray-300">Description</label>
                         <textarea
-                            className="w-full px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-blue-500 outline-none transition-all min-h-[80px]"
+                            className="w-full px-4 py-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 focus:ring-2 focus:ring-primary-500 outline-none transition-all min-h-[80px]"
                             value={formData.description}
                             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                         />

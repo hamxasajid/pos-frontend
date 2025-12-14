@@ -66,13 +66,13 @@ const UserList = () => {
                         <TableCell className="font-medium text-gray-900 dark:text-white">{user.name}</TableCell>
                         <TableCell>{user.email}</TableCell>
                         <TableCell>
-                            <span className={`px-2 py-1 rounded-full text-xs font-bold uppercase ${user.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-blue-100 text-blue-700'}`}>
+                            <span className={`px-2 py-1 rounded-full text-xs font-bold uppercase ${user.role === 'admin' ? 'bg-purple-100 text-purple-700' : 'bg-primary-100 text-primary-700'}`}>
                                 {user.role}
                             </span>
                         </TableCell>
                         <TableCell>
                             <div className="flex gap-2">
-                                <Button variant="ghost" className="!p-2 text-blue-500 hover:bg-blue-50" onClick={() => handleOpenModal(user)}>
+                                <Button variant="ghost" className="!p-2 text-primary-500 hover:bg-primary-50" onClick={() => handleOpenModal(user)}>
                                     <Edit2 size={16} />
                                 </Button>
                                 <Button variant="ghost" className="!p-2 text-red-500 hover:bg-red-50" onClick={() => setDeleteId(user.id)}>
@@ -103,7 +103,7 @@ const UserList = () => {
                         <select
                             value={formData.role}
                             onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                            className="w-full px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-blue-500 outline-none"
+                            className="w-full px-4 py-2 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 outline-none"
                         >
                             <option value="cashier">Cashier</option>
                             <option value="admin">Admin</option>
@@ -116,7 +116,7 @@ const UserList = () => {
                                 type="checkbox"
                                 checked={formData.isActive}
                                 onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
-                                className="w-5 h-5 text-blue-600 rounded focus:ring-blue-500"
+                                className="w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
                             />
                             <span className="text-gray-700 dark:text-gray-300 font-medium">Active User</span>
                         </label>

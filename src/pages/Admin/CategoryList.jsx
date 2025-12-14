@@ -49,7 +49,7 @@ const CategoryList = () => {
                     {categories.map((cat, idx) => (
                         <TableRow key={cat.id || idx}>
                             <TableCell className="font-medium text-gray-900 dark:text-white flex items-center gap-2">
-                                <Tag size={16} className="text-blue-500" />
+                                <Tag size={16} className="text-primary-500" />
                                 {cat.name || cat}
                             </TableCell>
                             <TableCell>

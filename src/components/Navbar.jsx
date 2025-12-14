@@ -33,17 +33,17 @@ const Navbar = ({ onMenuClick }) => {
 
     return (
         <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 h-16 flex items-center justify-between px-6 transition-colors duration-300">
-            <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+            <div className="flex items-center gap-2 text-primary-600 dark:text-primary-400">
                 {/* Mobile Menu Button - Only visible if onMenuClick is provided (Admin Layout) */}
                 {onMenuClick && (
                     <button
                         onClick={onMenuClick}
-                        className="p-2 mr-2 md:hidden text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg"
+                        className="p-2 mr-2 md:hidden text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
                     >
                         <Menu size={24} />
                     </button>
                 )}
-                <div className="bg-blue-600 p-2 rounded-lg text-white">
+                <div className="bg-primary-600 p-2 rounded-xl text-white shadow-lg shadow-primary-500/20">
                     <ShoppingBag size={24} />
                 </div>
                 <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">ModernPOS</h1>

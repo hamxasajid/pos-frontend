@@ -29,7 +29,7 @@ const Login = () => {
         <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950 transition-colors duration-300">
             <div className="w-full max-w-md p-8 bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-800 animate-in fade-in slide-in-from-bottom-5 duration-500">
                 <div className="flex flex-col items-center mb-8">
-                    <div className="bg-gradient-to-tr from-blue-600 to-indigo-600 p-4 rounded-2xl mb-4 text-white shadow-lg shadow-blue-500/40">
+                    <div className="bg-gradient-to-tr from-primary-600 to-primary-500 p-4 rounded-2xl mb-4 text-white shadow-lg shadow-primary-500/40">
                         <ShoppingBag size={40} />
                     </div>
                     <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">Welcome Back</h2>
